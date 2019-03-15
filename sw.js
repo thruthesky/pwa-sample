@@ -2,8 +2,8 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open('video-store').then(function (cache) {
             return cache.addAll([
-                '/start.html',
-                '/images/icons/icon-72x72.png'
+                '/pwa-sample/start.html',
+                '/pwa-sample/images/icons/icon-72x72.png'
             ]);
         })
     );
