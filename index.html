@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#317EFB"/>
+    <title>PWA demo</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+
+
+        // Register service worker to control making site work offline
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hellow PWA</h1>
+</body>
+
+</html>
