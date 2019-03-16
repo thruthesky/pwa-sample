@@ -3,7 +3,8 @@
  * 
  * @version 1:51 am
  */
-var myCache = 'pwa-cache-1-2';
+var myCache = 'pwa-cache-1-2-3';
+console.log('sw.js: cacheName: ' + myCache);
 self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(myCache).then(function (cache) {

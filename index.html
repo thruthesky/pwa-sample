@@ -6,19 +6,7 @@
     <meta name="theme-color" content="#317EFB"/>
     <title>PWA demo</title>
     <link rel="manifest" href="manifest.json">
-    <script>
-
-
-        // Register service worker to control making site work offline
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('sw.js')
-                .then(function () {
-                    console.log('Service Worker Registered');
-                });
-        }
-    </script>
+    <script src="pwa/register.js"></script>
 </head>
 
 <body>
