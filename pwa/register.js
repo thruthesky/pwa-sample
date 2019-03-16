@@ -6,3 +6,14 @@ if ('serviceWorker' in navigator) {
             console.log('Service Worker Registered');
         });
 }
+
+
+if (window.navigator && navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations()
+        .then(function (registrations) {
+            for (let registration of registrations) {
+                console.log('unregistering...');
+                registration.unregister();
+            }
+        });
+}
