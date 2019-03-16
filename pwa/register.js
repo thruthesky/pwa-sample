@@ -1,7 +1,7 @@
 // Register service worker to control making site work offline
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('sw.js')
+        .register('sw-2.js')
         .then(function () {
             console.log('Service Worker Registered');
         });
@@ -19,4 +19,20 @@ if ('serviceWorker' in navigator) {
 //                 registration.unregister();
 //             }
 //         });
+
+//     self.addEventListener('install', function (e) {
+//         e.waitUntil(
+//             caches.keys().then(function (cacheNames) {
+//                 console.log('deleting cache: ', cacheNames);
+//                 return Promise.all(
+//                     cacheNames.map(function (cacheName) {
+//                         if (myCache != cacheName) {
+//                             return caches.delete(cacheName);
+//                         }
+//                     })
+//                 );
+//             })
+//         );
+//     });
+
 // }

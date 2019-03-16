@@ -3,10 +3,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#317EFB"/>
+    <meta name="theme-color" content="#317EFB" />
     <title>PWA demo</title>
     <link rel="manifest" href="manifest.json">
-    <script src="pwa/register.js"></script>
+    <!-- <script src="pwa/register.js"></script> -->
+    <script>
+        if (window.navigator && navigator.serviceWorker) {
+            navigator.serviceWorker.getRegistrations()
+                .then(function (registrations) {
+                    for (let registration of registrations) {
+                        console.log('unregistering...');
+                        registration.unregister();
+                    }
+                });
+
+            self.addEventListener('install', function (e) {
+                e.waitUntil(
+                    caches.keys().then(function (cacheNames) {
+                        console.log('deleting cache: ', cacheNames);
+                        return Promise.all(
+                            cacheNames.map(function (cacheName) {
+                                if (myCache != cacheName) {
+                                    return caches.delete(cacheName);
+                                }
+                            })
+                        );
+                    })
+                );
+            });
+
+        }
+    </script>
 </head>
 
 <body>
