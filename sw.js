@@ -1,14 +1,26 @@
 /**
  * PWA service worker.js
  */
+var myCache = 'pwa-cache-2';
 self.addEventListener('install', function (e) {
     e.waitUntil(
-        caches.open('pwa-cache').then(function (cache) {
+        caches.open(myCache).then(function (cache) {
             return cache.addAll([
-                '/pwa-sample/start.html?v=1',
+                '/pwa-sample/start.html',
             ]);
         })
     );
+    // event.waitUntil(
+    //     caches.keys().then(function (cacheNames) {
+    //         return Promise.all(
+    //             cacheNames.map(function (cacheName) {
+    //                 if (myCache != cacheName) {
+    //                     return caches.delete(cacheName);
+    //                 }
+    //             })
+    //         );
+    //     })
+    // );
 });
 
 self.addEventListener('fetch', function (e) {
