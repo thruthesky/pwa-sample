@@ -8,12 +8,15 @@ if ('serviceWorker' in navigator) {
 }
 
 
-if (window.navigator && navigator.serviceWorker) {
-    navigator.serviceWorker.getRegistrations()
-        .then(function (registrations) {
-            for (let registration of registrations) {
-                console.log('unregistering...');
-                registration.unregister();
-            }
-        });
-}
+/**
+ * 
+ */
+// if (window.navigator && navigator.serviceWorker) {
+//     navigator.serviceWorker.getRegistrations()
+//         .then(function (registrations) {
+//             for (let registration of registrations) {
+//                 console.log('unregistering...');
+//                 registration.unregister();
+//             }
+//         });
+// }
