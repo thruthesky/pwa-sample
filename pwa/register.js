@@ -1,7 +1,7 @@
 // Register service worker to control making site work offline
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('sw-2.js')
+        .register('pwa/sw-2.js')
         .then(function () {
             console.log('Service Worker Registered');
         });
