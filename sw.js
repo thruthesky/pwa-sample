@@ -12,7 +12,7 @@ self.addEventListener('install', function (e) {
             ]);
         })
     );
-    event.waitUntil(
+    e.waitUntil(
         caches.keys().then(function (cacheNames) {
             return Promise.all(
                 cacheNames.map(function (cacheName) {
