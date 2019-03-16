@@ -9,7 +9,7 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(myCache).then(function (cache) {
             return cache.addAll([
-                '/pwa-sample/start.html',
+                '/pwa-sample/pwa/start.html',
             ]);
         })
     );
