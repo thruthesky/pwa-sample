@@ -1,7 +1,7 @@
 /**
  * PWA service worker.js
  * 
- * @version
+ * @version 1:51 am
  */
 var myCache = 'pwa-cache-2';
 self.addEventListener('install', function (e) {
@@ -12,17 +12,17 @@ self.addEventListener('install', function (e) {
             ]);
         })
     );
-    // event.waitUntil(
-    //     caches.keys().then(function (cacheNames) {
-    //         return Promise.all(
-    //             cacheNames.map(function (cacheName) {
-    //                 if (myCache != cacheName) {
-    //                     return caches.delete(cacheName);
-    //                 }
-    //             })
-    //         );
-    //     })
-    // );
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.map(function (cacheName) {
+                    if (myCache != cacheName) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
 });
 
 self.addEventListener('fetch', function (e) {
