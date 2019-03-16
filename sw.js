@@ -1,5 +1,7 @@
 /**
  * PWA service worker.js
+ * 
+ * @version
  */
 var myCache = 'pwa-cache-2';
 self.addEventListener('install', function (e) {
