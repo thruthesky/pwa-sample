@@ -1,9 +1,11 @@
+/**
+ * PWA service worker.js
+ */
 self.addEventListener('install', function (e) {
     e.waitUntil(
-        caches.open('video-store').then(function (cache) {
+        caches.open('pwa-cache').then(function (cache) {
             return cache.addAll([
                 '/pwa-sample/start.html',
-                '/pwa-sample/images/icons/icon-72x72.png'
             ]);
         })
     );

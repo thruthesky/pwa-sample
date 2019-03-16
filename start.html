@@ -1,3 +1,11 @@
 <script>
-    location.href="index.html"
+    window.addEventListener('offline', function (e) {
+        console.log('offline. Cannot go to index.html');
+    });
+
+    window.addEventListener('online', function (e) {
+        console.log('online. going to move index.html');
+        location.href = "index.html"
+    });
+    
 </script>
